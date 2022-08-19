@@ -1,0 +1,9 @@
+mass 1.5
+wingspan 2
+max_speed 100
+aspect_ratio 5
+range 4
+load_factor_max 2.5
+load_factor_min -1.5
+cl_max 1.5
+cl_min -.5

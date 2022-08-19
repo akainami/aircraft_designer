@@ -1,0 +1,9 @@
+VERTICAL_TAIL_PANEL 1
+Airfoil NACA0009
+Chord 0.2
+SectionSpan 0.25
+TaperRate 0.4
+TwistRate 0
+SweepAngle 0
+BodyIncidence 0
+Dihedral 0

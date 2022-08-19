@@ -1,0 +1,9 @@
+WING_PANEL 1
+Airfoil NACA4412
+Chord 0.25
+SectionSpan 0.5
+TaperRate 0
+TwistRate 0
+SweepAngle 7.5
+BodyIncidence 0
+Dihedral 7.5
