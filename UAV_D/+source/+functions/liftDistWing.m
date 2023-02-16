@@ -21,9 +21,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 %}
-function liftDistWing(UAV_D)
-alpha = -16 : 1 : 16;
-for i = 1 : 33
+function liftDistWing(UAV_D,alpha)
+
+if nargin < 2 
+    alpha = -5 : 10;
+end
+
+for i = 1 : length(alpha)
     UAV_D.plotWing3d_LiftDist('Wing',alpha(i));
 end
 end
