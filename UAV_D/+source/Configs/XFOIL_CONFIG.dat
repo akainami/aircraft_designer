@@ -1,6 +1,6 @@
 n 400
 t 1
-iter 300
-mina -10
-maxa 16
+iter 100
+mina -5
+maxa 10
 da 1
