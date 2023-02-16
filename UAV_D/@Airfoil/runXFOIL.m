@@ -54,9 +54,9 @@ for iReynolds = 1 : length(obj.Reynolds)
         end
         
         % Working Directory
-        wd = fileparts(which(mfilename));
-        wd = erase(wd,'@Airfoil');
-        wd = strcat(wd, '+source\XFOIL\');
+%         wd = fileparts(which(mfilename));
+%         wd = erase(wd,'@Airfoil');
+%         wd = strcat(wd, '+source\XFOIL\');
         
         % Call xfoil_interface
         fid = fopen('+source\XFOIL\xfoilrun.inp','w');
@@ -89,8 +89,9 @@ for iReynolds = 1 : length(obj.Reynolds)
         fclose(fid);
         
         % Execute XFOIL
-        cmd = sprintf('cd %s && xfoil.exe < xfoilrun.inp', wd);
-        [~,~] = system(cmd);
+%         cmd = sprintf('cd %s && xfoil.exe < xfoilrun.inp', wd);
+%         [~,~] = system(cmd);
+        [~,~] = system('cd "+source/XFOIL/" && xfoil.exe < xfoilrun.inp');
         
         % Copy polar to appropiate folder
         copyfile('+source/XFOIL/xfoilpolar.dat',targetfol);

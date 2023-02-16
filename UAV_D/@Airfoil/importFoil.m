@@ -37,13 +37,15 @@ if isNACA
     fprintf(fid, '%s\n','airfoil.dat');
     fprintf(fid, '\nquit');
     fclose(fid);
-    wd = fileparts(which(mfilename));
-    wd = erase(wd,'@Airfoil');
-    wd = strcat(wd, '+source\XFOIL\');
-    cmd = sprintf('cd %s && xfoil.exe < xfoilrun.inp', wd);
-    [~,~] = system(cmd);
-    % system() cant find the path, "cd D:\" is broken
-	% use D:\ instead of cd D:\
+    
+    % broken part
+%     wd = fileparts(which(mfilename));
+%     wd = erase(wd,'@Airfoil');
+%     wd = strcat(wd, '+source\XFOIL\');
+%     cmd = sprintf('D: && cd %s && "xfoil.exe" < "xfoilrun.inp"', wd);
+%     [~,~] = system(cmd);
+    [~,~] = system('cd "+source/XFOIL/" && xfoil.exe < xfoilrun.inp');
+    
     targetfol = strcat(obj.foldername,'/airfoil.dat');
     copyfile('+source/XFOIL/airfoil.dat',targetfol);
     delete('+source/XFOIL/xfoilrun.inp');
