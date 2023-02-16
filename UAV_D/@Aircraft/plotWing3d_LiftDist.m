@@ -47,13 +47,15 @@ for iR = 1 : length(cstruct.AlphaRange)
                 inductionVec(i));
         end
     end
+    hold on
     plot3(cstruct.bArr,zeros(n,1),cLiftVec,...
         'DisplayName',string(cstruct.Reynolds_Range(iR)));
+    hold on
 end
 
 axis equal;
 zlim([-0.5 1.5]); % CHANGE TO CHORD LENGTHS
-zlabel('Lift Coefficient');
+zlabel('Lift Distribution C_l');
 ylim([-0.5 0.5]);
 ylabel('Chord [m]');
 xlim(([min(cstruct.bArr)*1.1 1.1*max(cstruct.bArr)]));
